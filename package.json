@@ -1,0 +1,52 @@
+{
+  "name": "ui-assistant",
+  "version": "0.1.0",
+  "description": "Embeddable, LLM-powered in-app assistant that tells users what to do on any screen and highlights the exact element to click.",
+  "keywords": ["assistant", "onboarding", "product-tour", "guided-tour", "llm", "widget", "ux", "claude", "openai", "ollama"],
+  "license": "MIT",
+  "author": "Tanuj Parmar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanujtp/ui-assistant.git"
+  },
+  "homepage": "https://github.com/tanujtp/ui-assistant#readme",
+  "bugs": {
+    "url": "https://github.com/tanujtp/ui-assistant/issues"
+  },
+  "type": "module",
+  "main": "./dist/ui-assistant.cjs",
+  "module": "./dist/ui-assistant.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/ui-assistant.js",
+      "require": "./dist/ui-assistant.cjs"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite --config vite.demo.config.ts",
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "build:demo": "vite build --config vite.demo.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "media": "node scripts/capture-media.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "jsdom": "^25.0.1",
+    "playwright-core": "^1.49.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
